@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Chronicles</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            color: #333;
+	background-image: url('https://www.shutterstock.com/image-illustration/grand-stadium-full-spectators-expecting-600nw-1762180874.jpg'); 
+        }
+
+        /* Header */
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #e74c3c;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        header nav {
+            margin-top: 10px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #e74c3c;
+        }
+
+        /* Main Layout */
+        .container {
+            display: flex;
+            flex-direction: row-reverse;
+            margin: 20px auto;
+            padding: 0 20px;
+            max-width: 1200px;
+        }
+
+        /* Sidebar */
+        aside {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        aside section {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        aside section h3 {
+            font-size: 1.2rem;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        aside section ul {
+            list-style: none;
+        }
+
+        aside section ul li {
+            margin-bottom: 10px;
+        }
+
+        aside section ul li a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        aside section ul li a:hover {
+            color: #e74c3c;
+        }
+
+        /* Main Content */
+        main {
+            flex: 3;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        main article {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        main article:target,
+        main article#default {
+            display: block;
+        }
+
+        main article h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        main article .meta {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        main article img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        main article p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        main article .read-more {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        main article .read-more:hover {
+            background-color: #c0392b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 4px solid #e74c3c;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #e74c3c;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            aside {
+                margin-left: 0;
+                margin-bottom: 20px;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header nav ul li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Sports Pulse: Your Game Day Fix</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Game Tips</a></li>
+                <li><a href="#">Places</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside>
+            <section>
+                <h3>Recent Posts</h3>
+                <ul>
+                    <li><a href="#post1">Post 1 - Lords</a></li>
+                    <li><a href="#post2">Post 2 - Rishab Pant</a></li>
+                    <li><a href="#post3">Post 3 - Women Cricket</a></li>
+                </ul>
+            </section>
+            <section>
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#category1">Category 1</a></li>
+                    <li><a href="#category2">Category 2</a></li>
+                    <li><a href="#category3">Category 3</a></li>
+                </ul>
+            </section>
+        </aside>
+
+        <main>
+            <article id="default">
+                <h2>My Post </h2>
+                <p class="meta">By ChanduYarramothu | August 18, 2024</p>
+                <img src="https://www.financialexpress.com/wp-content/uploads/2024/06/T20-World-Cup-2024-1.jpg" alt="Sample Blog Post Image">
+                <p>Celebrating Victory: India’s Triumph in the ICC Men’s T20 World Cup 2024
+
+In a thrilling finale that kept cricket fans on the edge of their seats, India has emerged victorious in the ICC Men’s T20 World Cup 2024, held in the vibrant city of Mumbai. The win not only marks a historic achievement for Indian cricket but also showcases the incredible talent and determination of our national team.
+
+A Moment of Glory
+
+The final match was a spectacle of skill and strategy as India faced off against a formidable opponent. The atmosphere at Wankhede Stadium was electric, with passionate fans filling the stands, creating an unforgettable backdrop for this historic encounter. India’s captain, leading from the front, played a pivotal role, guiding the team to a memorable victory.</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+
+            <article id="post1">
+                <h2>Lords Cricket stadium</h2>
+                <p class="meta">By Chandu | August 16, 2024</p>
+                <img src="https://c8.alamy.com/comp/R922DF/the-pavillon-at-lords-cricket-ground-in-dramatic-evening-light-under-a-stormy-sky-during-the-england-versus-india-test-2018-R922DF.jpg" alt="Post 1 Image">
+                <p>Lord’s Cricket Ground, often dubbed the ‘Home of Cricket,’ is renowned for its rich history and iconic status within the sport. Located in London, it has hosted countless memorable matches and is considered a mecca for cricket enthusiasts.
+
+With its picturesque setting and historic architecture, Lord’s stands as a symbol of cricketing tradition. Its iconic pavilion and the legendary Long Room are integral to its charm and heritage.
+
+Established in 1787, Lord’s has witnessed some of the greatest moments in cricket history, from Test matches to World Cup finals, making it a revered venue for players and fans alike.
+
+The ground is renowned for its distinctive atmosphere and unparalleled ambiance, offering spectators a unique view of the game. Its lush outfield and well-maintained pitch contribute to its esteemed reputation.
+
+Lord’s continues to be a focal point for cricketing excellence and cultural significance, hosting international fixtures, domestic competitions, and maintaining its legacy as a cornerstone of the sport.</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+
+            <article id="post2">
+                <h2>Rishab Pant</h2>
+                <p class="meta">By Chandu | August 17, 2024</p>
+                <img src="https://images.cnbctv18.com/uploads/2024/04/pant-2024-04-4d389f0ff3dc664376a68d4bc2f6936b.jpg?impolicy=website&width=1200&height=900" alt="Sample Blog Post Image">
+                <p>"Rishabh Pant has emerged as one of India's most dynamic and exciting cricketers, known for his fearless batting and exceptional wicket-keeping skills. His aggressive style and knack for game-changing innings have made him a fan favorite.With a talent that shines brightly under pressure, Rishabh Pant’s ability to play match-winning knocks and his remarkable resilience on the field highlight his importance to the Indian cricket team.Pant's journey from a young prodigy to a pivotal player for India is a testament to his hard work and dedication. His innovative approach to batting has brought a fresh energy to the team.Off the field, Rishabh Pant’s charismatic personality and commitment to fitness continue to inspire young cricketers. His contributions to the sport extend beyond his on-field performances.Rishabh Pant’s memorable performances in critical matches, including his standout role in India’s historic Test series win in Australia, have solidified his reputation as a key player in international cricket."</p>
+
+                <a href="#" class="read-more">Read More</a>
+            </article>
+
+            <article id="post3">
+                <h2>Amazon Women Cricket</h2>
+                <p class="meta">By Chandu | August 15, 2024</p>
+                <img src="https://i.ytimg.com/vi/LgSr03KAuSE/maxresdefault.jpg" alt="Post 3 Image">
+                <p>Women’s cricket has undergone a remarkable transformation over the years, evolving from a niche sport into a prominent and celebrated field of athletics. From its early days, when it struggled for recognition, to the current era of international acclaim, women’s cricket has made significant strides in gaining respect and visibility. Major milestones such as the ICC Women’s World Cup and the Women’s T20 World Cup have spotlighted the talent and determination of female cricketers. Players like Mithali Raj and Ellyse Perry have not only dazzled on the field but also served as inspirational figures, advocating for greater opportunities and equity in sports. Despite the progress, challenges remain, including disparities in funding and media coverage. However, the future is promising with expanding domestic leagues and grassroots programs fostering new talent. As women’s cricket continues to grow, it brings with it a wave of enthusiasm and support from fans and communities worldwide, making it an exciting time for the sport’s evolution.
+
+</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+	<p>Communicate via chanduyarramothu@gmail.com</p>
+        <p>© 2024 Chandu Blogs. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>
